@@ -1,0 +1,60 @@
+li {
+    list-style-type: none;
+    align-items: center;
+    padding-right: 40px;
+    margin-top: 5px;
+}
+ul {
+    display: flex;flex-direction: row;
+}
+a:link {
+    color: black;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: green;
+    text-decoration: none;
+    text-shadow: 10px;
+}
+.headerNationalParks {
+    margin-top: 80pt;
+    font-size: x-large;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 20pt;
+}
+
+.locationDropdownList {
+    margin-right: 100pt;
+}
+
+.dropdownSearchNationalParks{
+    display: flex; flex-direction: row;
+    display: flex; justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 20pt;
+}
+.displayNationalparks{
+    margin-left: 80pt;
+    margin-right: 80pt;
+    font-size: xx-small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-style: solid;
+    padding: 20pt;
+}
+
+#nationalparksInformation {
+        border-collapse: separate;
+        border-spacing: 5pt;
+
+}
+
+#nationalparksInformation thead {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap
+}

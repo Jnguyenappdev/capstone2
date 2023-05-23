@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>National Parks</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link href="/css/stylesheet.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="navbarLinks">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="logoNavbar">
+          <img
+            src="/logoImages/Logo-transparent-background-removebg-preview.png"
+            alt="Transparent Background Logo"
+          />
+        </div>
+        <ul class="listLinks">
+          <li class="homepageLink">
+            <a href="homepage.html">Home </a>
+          </li>
+          <li class="nationalparksLink">
+            <a href="nationalparks.html">National Parks</a>
+          </li>
+          <li class="mountainsinfoLink">
+            <a href="mountainsinfo.html">Mountain Information</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <h1 class="headerNationalParks">Search for National Park!</h1>
+    <div class="dropdownSearchNationalParks">
+      <div class="locationDropdownList">
+        <select id="locationStates"></select>
+      </div>
+      <div class="parkTypeDropdownList">
+        <select id="parktypeList"></select>
+      </div>
+    </div>
+    <div class="displayNationalparks">
+      <table id="nationalparksInformation">
+        <thead>
+          <tr>
+            <th>Location Name</th>
+            <th>Address</th>
+            <th>Phone Number</th>
+            <th>Fax Number</th>
+            <th>Visit</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody id="tableRow"></tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
+    <script src="/scripts/locationData.js"></script>
+    <script src="/scripts/nationalParkData.js"></script>
+    <script src="/scripts/parkTypeData.js"></script>
+  </body>
+</html>
