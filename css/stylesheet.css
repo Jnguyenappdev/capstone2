@@ -89,3 +89,42 @@ p {
     margin-left: 20pt;
     margin-right: 20pt;
 }
+
+#img{
+    display: flex; justify-content: center;
+}
+
+.listLinks {
+    font-weight: bolder;
+}
+
+.fillerTitles {
+    margin-top: 50pt;
+    font-size: large;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.fillerTitles2{
+    margin-top: 20pt;
+    font-size: large;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.fillerInformation{
+    text-align: center;
+    margin-left: 300pt;
+    margin-right: 300pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+.homepageImg {
+    margin-top: 100pt;
+    display: flex; justify-content: center;
+    size: 15pt;
+
+
+}

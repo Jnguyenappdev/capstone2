@@ -5820,12 +5820,14 @@ function getDetailLocationChanged() {
   let selectedLocation = selectLocation.value;
 
   const table = document.getElementById("nationalparksInformation");
-
+  const tbody = document.getElementById("tableBody")
   //clears table rows when another location is selected
-  table.innerHTML = "";
+  tbody.innerHTML = "";
 
+
+console.log(tbody)
   //reset option for park type to select one when location changes
-  document.getElementById("parktypeList").selectedIndex = 0;
+  // document.getElementById("parktypeList").selectedIndex = 0;
 
   //filter nationparksArry depending on state matching selected value
   const matchingParkLocation = nationalParksArray.filter(
@@ -5834,13 +5836,13 @@ function getDetailLocationChanged() {
   // disaplys each matchingParkLocation from filter
   matchingParkLocation.forEach((park) => {
     //invoked function to create table into onchange function
-    buildRow(table, park);
+    buildRow(tbody, park);
   });
 }
 
 const message = "Information is not available";
 //display table without the selected location value
-const table = document.getElementById("nationalparksInformation");
+//const table = document.getElementById("nationalparksInformation");
 
 //invoking function to create table and displays each park
 // nationalParksArray.forEach((park) => {
