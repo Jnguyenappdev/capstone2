@@ -56,7 +56,8 @@ const locationsArray = [
   "Wyoming",
 ];
 
-locationsArray.unshift("Select One");
+//locationsArray.unshift("Select All");
+locationsArray.unshift("Select State...")
 
 const selectLocation = document.getElementById("locationStates");
 

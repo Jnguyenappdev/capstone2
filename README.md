@@ -16,7 +16,7 @@ Build a website that helps a user find things to do to enjoy the great outdoors
                     - State/territory
                         - Dropdown
                         - Data [locationData.js]
-                        -park matches location by comparing to the park's "State" property.
+                        - Park matches location by comparing to the park's "State" property.
             - Park Type
                 - Select Park Type 
                     - Dropdown box

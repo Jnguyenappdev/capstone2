@@ -13,8 +13,8 @@ const parkTypesArray = [
   "Trail",
   "Parkway",
 ];
-
-parkTypesArray.unshift("Select One");
+//parkTypesArray.unshift("Select All")
+parkTypesArray.unshift("Select Park Type...");
 
 const selectParktype = document.getElementById("parktypeList");
 

@@ -528,3 +528,50 @@ const mountainsArray = [
         }
     }
 ]
+
+mountainsArray.unshift({name: "Select Mountain..."})
+
+const selectMountain = document.getElementById("mountainsDropdown");
+
+mountainsArray.forEach((mountain) => {
+    const mountainOptionEl = new Option(mountain.name, mountain.name)
+    selectMountain.appendChild(mountainOptionEl)
+});
+
+selectMountain.onchange = getDetailMountainChange
+
+function getDetailMountainChange(){
+    let selectMountainValue = selectMountain.value;
+    const mountainNameDisplay = mountainsArray.find((mountain) => mountain.name === selectMountainValue );
+    if(mountainNameDisplay){
+        const mountainNameEl = document.getElementById("mountainName")
+        mountainNameEl.innerHTML = mountainNameDisplay.name
+        const descriptionEl = document.getElementById("description")
+        descriptionEl.innerHTML = mountainNameDisplay.desc
+        const elevationEl = document.getElementById("elevation")
+        elevationEl.innerHTML = mountainNameDisplay.elevation + " feet"
+        const otherEl = document.getElementById("other")
+        otherEl.innerHTML = "Effort:" +  mountainNameDisplay.effort + "<br>" +  "Coordinates:"+ mountainNameDisplay.coords.lat + " " + mountainNameDisplay.coords.lng
+
+        const imgDiv = document.getElementById("img")
+        const imgs = imgDiv.querySelectorAll('img')
+        Array.from(imgs).forEach((img) => {
+            imgDiv.removeChild(img)
+        })
+    
+        const insertedImagePath = []
+        insertedImagePath.push(mountainNameDisplay.img)
+        const imgEl = document.createElement('img');
+        imgEl.src = "/images/" + mountainNameDisplay.img
+        imgEl.alt = mountainNameDisplay.name
+        imgDiv.appendChild(imgEl)
+
+    }
+    
+    console.log(selectMountainValue)
+
+    // if(mountainNameDisplay){
+    //    const mountainNameEl = document.getElementById("mountainName")
+    //    mountainNameEl.innerHTML = mountain.name
+    // }
+}

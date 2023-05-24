@@ -5813,24 +5813,21 @@ const nationalParksArray = [
   },
 ];
 
-
-
 selectLocation.onchange = getDetailLocationChanged;
 
 function getDetailLocationChanged() {
   //getting selected location value in order to filter through array
   let selectedLocation = selectLocation.value;
-  
 
   const table = document.getElementById("nationalparksInformation");
 
   //clears table rows when another location is selected
   table.innerHTML = "";
-  
+
   //reset option for park type to select one when location changes
   document.getElementById("parktypeList").selectedIndex = 0;
 
-  //filter nationparksArry depending on state matching selected value 
+  //filter nationparksArry depending on state matching selected value
   const matchingParkLocation = nationalParksArray.filter(
     (park) => park.State == selectedLocation
   );
@@ -5841,9 +5838,7 @@ function getDetailLocationChanged() {
   });
 }
 
-
-
-
+const message = "Information is not available";
 //display table without the selected location value
 const table = document.getElementById("nationalparksInformation");
 
@@ -5870,13 +5865,34 @@ function buildRow(myTable, myDetails) {
     myDetails.ZipCode;
 
   const cell3 = row.insertCell(2);
-  cell3.innerHTML = myDetails.Phone;
+  if (myDetails.Phone == 0) {
+    cell3.innerHTML = message;
+  } else {
+    cell3.innerHTML = myDetails.Phone;
+  }
 
   const cell4 = row.insertCell(3);
-  cell4.innerHTML = myDetails.Fax;
+  if (myDetails.Fax == 0) {
+    cell4.innerHTML = message;
+  } else {
+    cell4.innerHTML = myDetails.Fax;
+  }
 
   const cell5 = row.insertCell(4);
-  cell5.innerHTML = myDetails.Visit;
+  if (myDetails.Visit == undefined) {
+    cell5.innerHTML = message;
+  } else {
+    const link = document.createElement("a");
+    link.setAttribute("href", "#");
+    link.className = "linkClass";
+    const linkText = document.createTextNode("Visit Website");
+    link.appendChild(linkText)
+    cell5.appendChild(link);
+
+    cell5.onclick = function(){
+      window.open(myDetails.Visit)
+    }
+  }
 
   const cell6 = row.insertCell(5);
   cell6.innerHTML = `${myDetails.Longitude} , ${myDetails.Latitude}`;
