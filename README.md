@@ -51,4 +51,4 @@ Build a website that helps a user find things to do to enjoy the great outdoors
         - Display the sunrise and sunset time "today" for any mountain
             - "fetch" using Javascript Fetch API
                 - Refer to Capstone 2 documentation workbook
-                
+                ![excalidraw](https://github.com/Jnguyenappdev/capstone2/assets/129987308/cf6ad601-03ad-46f0-baf1-54bf472de500)
