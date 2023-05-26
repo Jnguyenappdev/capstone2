@@ -5820,24 +5820,30 @@ function getDetailLocationChanged() {
   let selectedLocation = selectLocation.value;
 
   const table = document.getElementById("nationalparksInformation");
-  const tbody = document.getElementById("tableBody")
+  const tbody = document.getElementById("tableBody");
   //clears table rows when another location is selected
   tbody.innerHTML = "";
 
-
-console.log(tbody)
   //reset option for park type to select one when location changes
-  // document.getElementById("parktypeList").selectedIndex = 0;
+  document.getElementById("parktypeList").selectedIndex = 0;
 
   //filter nationparksArry depending on state matching selected value
   const matchingParkLocation = nationalParksArray.filter(
-    (park) => park.State == selectedLocation
+    (park) => park.State === selectedLocation
   );
   // disaplys each matchingParkLocation from filter
   matchingParkLocation.forEach((park) => {
     //invoked function to create table into onchange function
     buildRow(tbody, park);
   });
+  // when "view all" is selected for location
+  if (selectedLocation === "View All") {
+    //display array that matches the coniditons
+    nationalParksArray.forEach((park) => {
+      //build table in tbody
+      buildRow(tbody, park);
+    });
+  }
 }
 
 const message = "Information is not available";
@@ -5888,12 +5894,12 @@ function buildRow(myTable, myDetails) {
     link.setAttribute("href", "#");
     link.className = "linkClass";
     const linkText = document.createTextNode("Visit Website");
-    link.appendChild(linkText)
+    link.appendChild(linkText);
     cell5.appendChild(link);
 
-    cell5.onclick = function(){
-      window.open(myDetails.Visit)
-    }
+    cell5.onclick = function () {
+      window.open(myDetails.Visit);
+    };
   }
 
   const cell6 = row.insertCell(5);

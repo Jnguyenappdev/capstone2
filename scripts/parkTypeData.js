@@ -13,7 +13,7 @@ const parkTypesArray = [
   "Trail",
   "Parkway",
 ];
-//parkTypesArray.unshift("Select All")
+parkTypesArray.unshift("View All");
 parkTypesArray.unshift("Select Park Type...");
 
 const selectParktype = document.getElementById("parktypeList");
@@ -34,9 +34,10 @@ function getDetailParkChange() {
   let selectedLocation = selectLocation.value;
   let selectedParktype = selectParktype.value;
   const table = document.getElementById("nationalparksInformation");
-
-  // clear table of previous selected array of parks
-  table.innerHTML = "";
+  const tbody = document.getElementById("tableBody");
+  const resetLocationOption = document.getElementById("locationStates");
+  //clears table rows when another location is selected
+  tbody.innerHTML = "";
 
   // filters through an array for matching location and state
   const matchingParkLocation = nationalParksArray.filter(
@@ -49,19 +50,33 @@ function getDetailParkChange() {
   );
   // displays the filtered array in table
   matchingParktype.forEach((park) => {
-    buildRow(table, park);
+    buildRow(tbody, park);
   });
-
-
 
   const matchingParktypeSingle = nationalParksArray.filter((park) =>
     park.LocationName.includes(selectedParktype)
   );
-  // displays the filtered array in table
-  if (selectedLocation == "Select One"){
-  matchingParktypeSingle.forEach((park) => {
-    buildRow(table, park);
-  })};
+  // when user only selects park type and location has not yet been selected
+  if (selectedLocation == "Select State...") {
+    // display array
+    matchingParktypeSingle.forEach((park) => {
+      buildRow(tbody, park);
+    });
+  }
 
+  // when location is selected to view all
+  if (selectedLocation == "View All") {
+    // park type can be selected and displayed
+    matchingParktypeSingle.forEach((park) => {
+      buildRow(tbody, park);
+    });
+  }
+
+  //when selected park type is view all when option for location is selected
+  if (selectedParktype == "View All") {
+    matchingParkLocation.forEach((park) => {
+      //invoked function to create table into onchange function
+      buildRow(tbody, park);
+    });
+  }
 }
-

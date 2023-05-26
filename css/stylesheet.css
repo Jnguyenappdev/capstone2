@@ -52,12 +52,6 @@ a:hover{
 
 }
 
-#nationalparksInformation thead {
-    clear: both;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap
-}
 
 .mountainsDropdown {
     display: flex; justify-content: center;
@@ -128,3 +122,4 @@ p {
 
 
 }
+

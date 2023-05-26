@@ -55,8 +55,8 @@ const locationsArray = [
   "Wisconsin",
   "Wyoming",
 ];
-
-//locationsArray.unshift("Select All");
+//creation of new options for array
+locationsArray.unshift("View All");
 locationsArray.unshift("Select State...")
 
 const selectLocation = document.getElementById("locationStates");
