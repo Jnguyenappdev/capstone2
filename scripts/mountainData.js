@@ -575,6 +575,7 @@ function getDetailMountainChange() {
     const insertedImagePath = [];
     insertedImagePath.push(mountainNameDisplay.img);
     const imgEl = document.createElement("img");
+    imgEl.className = "imgMountain";
     imgEl.src = "/images/" + mountainNameDisplay.img;
     imgEl.alt = mountainNameDisplay.name;
 

@@ -19,7 +19,7 @@ a:hover{
     text-shadow: 10px;
 }
 .headerNationalParks {
-    margin-top: 80pt;
+    margin-top: 20pt;
     font-size: x-large;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -59,7 +59,7 @@ a:hover{
     margin-bottom: 20pt;
 }
 .mountainHeader{
-    margin-top: 80pt;
+    margin-top: 20pt;
     font-size: x-large;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -118,8 +118,11 @@ p {
 .homepageImg {
     margin-top: 100pt;
     display: flex; justify-content: center;
-    size: 15pt;
-
+    overflow-x: hidden;
 
 }
 
+.imgMountain {
+    width: 250pt;
+    border:black solid 3pt;
+}
